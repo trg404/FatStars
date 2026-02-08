@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rate Your Experience - Fat Shack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fat Shack</h1>
+      <p class="subtitle">How was your experience?</p>
+    </header>
+
+    <!-- Step 1: Star Rating -->
+    <div id="rating-step" class="step active">
+      <div class="stars" id="stars">
+        <button class="star" data-value="1" aria-label="1 star">&#9733;</button>
+        <button class="star" data-value="2" aria-label="2 stars">&#9733;</button>
+        <button class="star" data-value="3" aria-label="3 stars">&#9733;</button>
+        <button class="star" data-value="4" aria-label="4 stars">&#9733;</button>
+        <button class="star" data-value="5" aria-label="5 stars">&#9733;</button>
+      </div>
+      <p class="rating-label" id="rating-label">Tap a star to rate</p>
+      <button class="btn" id="submit-rating" disabled>Submit Rating</button>
+    </div>
+
+    <!-- Step 2a: Google Review (5 stars) -->
+    <div id="google-step" class="step">
+      <div class="icon-success">&#10003;</div>
+      <h2>Thank you!</h2>
+      <p>We're glad you had a great experience! Would you mind sharing your feedback on Google? It helps us a lot.</p>
+      <a id="google-review-link" class="btn btn-google" href="#" target="_blank" rel="noopener noreferrer">
+        Leave a Google Review
+      </a>
+      <button class="btn btn-secondary" id="skip-review">No thanks</button>
+    </div>
+
+    <!-- Step 2b: Feedback Form (below 5 stars) -->
+    <div id="feedback-step" class="step">
+      <h2>We're sorry to hear that</h2>
+      <p>Please let us know what went wrong so we can improve.</p>
+      <form id="feedback-form">
+        <div class="form-group">
+          <label for="name">Name (optional)</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="feedback">What went wrong?</label>
+          <textarea id="feedback" name="feedback" rows="4" placeholder="Tell us about your experience..." required></textarea>
+        </div>
+        <button type="submit" class="btn" id="submit-feedback">Send Feedback</button>
+      </form>
+      <p class="error-msg" id="feedback-error"></p>
+    </div>
+
+    <!-- Step 3: Thank You -->
+    <div id="thankyou-step" class="step">
+      <div class="icon-success">&#10003;</div>
+      <h2>Thank you for your feedback!</h2>
+      <p>We appreciate you taking the time to help us improve.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
